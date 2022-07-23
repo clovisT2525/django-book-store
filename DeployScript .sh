@@ -1,5 +1,5 @@
 #!/bin/bash
-git clone https://github.com/ahmedmabrouk11011/django-book-store.git
+git clone https://github.com/clovisT2525/djanog-book-store.git
 cd /django-book-store
 docker-compose up -d
 docker ps
