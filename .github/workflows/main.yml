@@ -23,3 +23,31 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/django-book-store:latest
+  Deploy-on-AWS:
+      needs: build-Docker-Image
+      runs-on: ubuntu-latest
+      steps:
+      - name: Checkout 
+        uses: actions/checkout@v2
+
+      - name: Update Docker Compose File on VM
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          source: './*'
+          target: "/home/ubuntu/django-book-store"      
+            
+
+      - name: Deploy Docker Compose
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          script: |
+            cd /home/ubuntu/django-book-store
+            docker-compose down --rmi all
+            docker-compose up -d
+
