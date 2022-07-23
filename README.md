@@ -1,4 +1,8 @@
+ dockerize-the-application
+ Book Store 
+
 # Book Store 
+main
 
 This is a sample django project to create a Book store Rest API to perform the CRUD operation and home page to display the books form the database
 
@@ -17,4 +21,8 @@ To Run the application make sure that you have Postgress DB running and run the 
 python manage.py makemigrations --noinput
 python manage.py migrate --noinput
 python manage.py runserver 8000
+dockerize-the-application
 ```
+
+```
+ main
