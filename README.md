@@ -1,5 +1,5 @@
 # django-book-store
-This is a sample django project to create a Book store Rest API to perform the CRUD operation and home page to display the books form the database
+This is a sample django project to create a Book store Rest API to perform the CRUD operation and home page to display the books form the database.
 
 Requirments:
 
