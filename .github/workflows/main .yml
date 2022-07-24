@@ -50,4 +50,3 @@ jobs:
             cd /home/ubuntu/django-book-store
             docker-compose down --rmi all
             docker-compose up -d
-

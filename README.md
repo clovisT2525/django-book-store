@@ -8,21 +8,15 @@ This is a sample django project to create a Book store Rest API to perform the C
 
 Requirments:
 
-1- Python
+1- Docker
 
-2- Docker
+2- Insomnia
 
-3- Insomnia
+To Run the application
 
+docker compose up -d
+docker compose exec web python manage.py makemigrations --noinput
+docker compose exec web python manage.py migrate --noinput
+To Stop the application
 
-To Run the application make sure that you have Postgress DB running and run the below commands to create the DB tabls 
-
-```
-python manage.py makemigrations --noinput
-python manage.py migrate --noinput
-python manage.py runserver 8000
-dockerize-the-application
-```
-
-```
- main
+docker compose down
