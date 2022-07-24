@@ -37,7 +37,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           source: './*'
-          target: "/home/ubuntu/django-book-store"      
+          target: "/home/ubuntu/djanog-book-store"      
             
 
       - name: Deploy Docker Compose
@@ -47,6 +47,6 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           script: |
-            cd /home/ubuntu/django-book-store
+            cd /home/ubuntu/djanog-book-store
             docker-compose down --rmi all
             docker-compose up -d
